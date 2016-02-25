@@ -76,7 +76,7 @@ gulp.task('coveralls', ['test'], function() {
 });
 
 gulp.task('compile', ['clean', 'styles'], function() {
-  return browserify({/*debug: true,*/ standalone: 'bespoke.plugins.qrcode'})
+  return browserify({ debug: true, standalone: 'bespoke.plugins.qrcode' })
     .add('./lib/bespoke-qrcode.js')
     .transform('brfs')
     .bundle()

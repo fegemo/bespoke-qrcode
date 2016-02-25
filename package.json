@@ -9,7 +9,7 @@
     "name": "Flávio Coutinho",
     "url": "https://github.com/fegemo"
   },
-  "main": "./lib/bespoke-qrcode.js",
+  "main": "./dist/bespoke-qrcode.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/fegemo/bespoke-qrcode.git"
@@ -23,8 +23,6 @@
   },
   "devDependencies": {
     "bespoke": "^1.0.0",
-    "bespoke-bullets": "^1.1.0",
-    "bespoke-classes": "^1.0.0",
     "bespoke-keys": "^1.0.0",
     "bespoke-theme-cube": "^2.0.1",
     "bespoke-touch": "^1.0.0",
@@ -58,11 +56,10 @@
     "vinyl-buffer": "1.0.0",
     "vinyl-map": "^1.0.1",
     "vinyl-source-stream": "^1.1.0",
-    "vinyl-transform": "^1.0.0",
-    "watchify": "^3.7.0"
+    "vinyl-transform": "^1.0.0"
   },
   "engines": {
-    "node": ">=0.10.0"
+    "node": ">=5.4.0"
   },
   "license": "MIT",
   "keywords": [
