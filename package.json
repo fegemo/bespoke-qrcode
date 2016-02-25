@@ -9,7 +9,7 @@
     "name": "Flávio Coutinho",
     "url": "https://github.com/fegemo"
   },
-  "main": "./dist/bespoke-qrcode.js",
+  "main": "./lib/bespoke-qrcode.js",
   "repository": {
     "type": "git",
     "url": "git://github.com/fegemo/bespoke-qrcode.git"
