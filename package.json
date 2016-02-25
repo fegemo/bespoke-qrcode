@@ -1,0 +1,75 @@
+{
+  "name": "bespoke-qrcode",
+  "version": "1.0.0",
+  "description": "Shows qr-codes for the hyperlinks in the current slide",
+  "homepage": "https://github.com/fegemo/bespoke-qrcode",
+  "bugs": "https://github.com/fegemo/bespoke-qrcode/issues",
+  "author": {
+    "email": "fegemo@gmail.com",
+    "name": "Flávio Coutinho",
+    "url": "https://github.com/fegemo"
+  },
+  "main": "./lib/bespoke-qrcode.js",
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/fegemo/bespoke-qrcode.git"
+  },
+  "scripts": {
+    "coveralls": "gulp coveralls",
+    "test": "gulp"
+  },
+  "peerDependencies": {
+    "bespoke": ">=1.0.0"
+  },
+  "devDependencies": {
+    "bespoke": "^1.0.0",
+    "bespoke-bullets": "^1.1.0",
+    "bespoke-classes": "^1.0.0",
+    "bespoke-keys": "^1.0.0",
+    "bespoke-theme-cube": "^2.0.1",
+    "bespoke-touch": "^1.0.0",
+    "browserify": "^13.0.0",
+    "del": "^2.2.0",
+    "gulp": "^3.9.0",
+    "gulp-autoprefixer": "^3.1.0",
+    "gulp-brfs": "^0.1.0",
+    "gulp-coveralls": "^0.1.4",
+    "gulp-csso": "^1.0.1",
+    "gulp-debug": "^2.0.1",
+    "gulp-header": "^1.2.2",
+    "gulp-jshint": "^2.0.0",
+    "gulp-plumber": "^1.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-uglify": "^1.2.0",
+    "istanbul": "^0.4.2",
+    "jasmine-core": "^2.3.4",
+    "jshint": "^2.9.1",
+    "jshint-stylish": "^2.0.1",
+    "karma": "^0.13.2",
+    "karma-browserify": "^5.0.1",
+    "karma-coverage": "^0.5.3",
+    "karma-jasmine": "^0.3.6",
+    "karma-phantomjs-launcher": "^1.0.0",
+    "lodash": "^4.5.0",
+    "merge-stream": "^1.0.0",
+    "phantomjs-prebuilt": "^2.1.4",
+    "simulant": "^0.2.0",
+    "through": "^2.3.8",
+    "vinyl-buffer": "1.0.0",
+    "vinyl-map": "^1.0.1",
+    "vinyl-source-stream": "^1.1.0",
+    "vinyl-transform": "^1.0.0",
+    "watchify": "^3.7.0"
+  },
+  "engines": {
+    "node": ">=0.10.0"
+  },
+  "license": "MIT",
+  "keywords": [
+    "bespoke-plugin"
+  ],
+  "dependencies": {
+    "insert-css": "^0.2.0",
+    "qr-image": "^3.1.0"
+  }
+}
