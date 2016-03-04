@@ -1,7 +1,7 @@
 {
   "name": "bespoke-qrcode",
   "version": "1.0.0",
-  "description": "Shows qr-codes for the hyperlinks in the current slide",
+  "description": "Shows qr-codes for the hyperlinks in a bespoke.js presentation",
   "homepage": "https://github.com/fegemo/bespoke-qrcode",
   "bugs": "https://github.com/fegemo/bespoke-qrcode/issues",
   "author": {
