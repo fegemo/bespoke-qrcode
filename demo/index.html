@@ -2,129 +2,37 @@
 <html>
 <head>
   <meta name="viewport" content="width=device-width"/>
-  <title>bespoke-simple-overview demo</title>
+  <title>bespoke-qrcode demo</title>
   <link rel="stylesheet" href="demo.css">
 </head>
 <body>
   <article id="presentation" class="cube">
     <section>
-      <h1>bespoke-simple-overview</h1>
+      <h1>bespoke-qrcode</h1>
 
-      <p>This plugin creates an <strong>overview mode</strong> in which the
-        viewer sees <strong>more than 1 slide at a time</strong> and it
-        <strong>can be toggled using <kbd>ESC</kbd></strong> or some
-        other configurable key.
+      <p>This plugin <strong>generates and displays a QR code</strong> for
+        all <strong>external hyperlinks</strong> in a bespoke.js
+        presentation.</p>
+      <p>
+        When a viewer hovers on such a link, <strong>a small QR code icon
+        appears</strong> and, if he/she clicks it, <strong>a fullscreen QR
+        code that encodes the URL appears</strong>.
       </p>
-      <h2 class="jumbo">Hit 'ESC' now!! ;)</h2>
-    </section>
-    <section>
-      <h1>Works on different themes!</h1>
-      <p>Try it out on:</p>
-      <ul>
-        <li>fancy (<a href="https://www.npmjs.com/package/bespoke-theme-fancy">on npm</a>)</li>
-        <li><a href="index-cube.html">cube</a> (<a href="https://www.npmjs.com/package/bespoke-theme-cube">on npm</a>)</li>
-        <li><a href="index-voltaire.html">voltaire</a> (<a href="https://www.npmjs.com/package/bespoke-theme-voltaire">on npm</a>)</li>
-        <li><a href="index-nebula.html">nebula</a> (<a href="https://www.npmjs.com/package/bespoke-theme-nebula">on npm</a>)</li>
-        <li><a href="index-mozilla-sandstone.html">mozilla-sandstone</a> (<a href="https://www.npmjs.com/package/bespoke-theme-mozilla-sandstone">on npm</a>)</li>
-      </ul>
-    </section>
-    <section>
-      <h1>Dependencies</h1>
-      <ul>
-        <li>This plugin
-          <strong>depends only on the <a href="https://github.com/bespokejs/bespoke-classes">
-            <code>bespoke-classes</code></a> plugin
-          </strong>
-        </li>
-        <li>
-          However, if you are including <code>bespoke-bullets</code>, make sure
-          <strong><code>bespoke-simple-overview</code> gets loaded before</strong>
-          it, like so:
-          <pre><code>window.deck = bespoke.from('article', [
-  bespoke.plugins.classes(),
-  bespoke.plugins.simpleOverview(),
-  <strong>bespoke.plugins.bullets()</strong>
-]);</code></pre>
-        </li>
-      </ul>
+      <p>
+        It is dismissed when the viewer clicks anywhere on the presentation.
+      </p>
+      <a href="http://github.com/fegemo/bespoke-qrcode/">Repository</a>
     </section>
     <section>
       <h1>Configuration</h1>
       <p>The plugin constructor can take a <strong>configuration object</strong> like this:</p>
-      <pre><code>var simpleOverview = bespoke.plugins.simpleOverview({
-  activationKey: 'd',   // Defaults to 27 (ESC)
+      <pre><code>var qrcode = bespoke.plugins.qrcode({
   insertStyles: false   // Defaults to true
 });</code></pre>
       <ul>
-        <li><code>activationKey</code>: a string character or its
-          corresponding ASCII integer to be used as the <strong>key that
-            activates/deactivates the overview mode</strong></li>
         <li><code>insertStyles</code>: a <code>boolean</code> indicating
           whether the plugin should <strong>include some CSS rules to style the
-          presentation when in the overview mode</strong></li>
-      </ul>
-    </section>
-    <section>
-      <h1>How it works</h1>
-      <ul>
-        <li>The plugin simply <strong>adds/removes a
-          <code>.bespoke-simple-overview</code> class</strong> on the
-          <code>deck.parent</code> element when the <code>activationKey</code>
-          is pressed.
-        </li>
-        <li>By default, it adds some CSS rules based on that class</li>
-      </ul>
-    </section>
-    <section>
-      <h1>The <strong>default styling</strong></h1>
-      <ul>
-        <li>To see which CSS rules are added by default, see the file
-          <a href="https://github.com/fegemo/bespoke-simple-overview/blob/master/lib/bespoke-simple-overview.css">
-            <code>lib/bespoke-simple-overview.css</code>
-          </a>
-        </li>
-        <li>They basically add a rule to the <code>.bespoke-slide</code> class
-          with <code>transform: translated3d(x, 0, -2000px)</code>, so that
-          the slides go further from the "camera" and become smaller
-        </li>
-        <li>Tipically, about 5 <code>.bespoke-slide</code>s are shown:
-          <ul>
-            <li>The current one: <code>.bespoke-slide.bespoke-active</code></li>
-            <li>Two before: <code>.bespoke-slide.bespoke-before</code></li>
-            <li>Two after: <code>.bespoke-slide.bespoke-after</code></li>
-          </ul>
-        </li>
-      </ul>
-    </section>
-    <section>
-      <h1>Events</h1>
-      <ul>
-        <li>There are <strong>3 events exposed</strong> by this plugin:
-          <ul>
-            <li><code>simple-overview.enable</code>: Goes into overview mode</li>
-            <li><code>simple-overview.disable</code>: Leaves to regular mode</li>
-            <li><code>simple-overview.toggle</code>: Toggles overview/regular mode</li>
-          </ul>
-        </li>
-        <li>To <strong>trigger the events</strong>:
-          <pre><code>deck.fire('simple-overview.disable')</code></pre>
-        </li>
-      </ul>
-    </section>
-    <section>
-      <h1>Triggering from a button</h1>
-      <ul>
-        <li>Using the plugin events, it is possible to
-          trigger the overview mode using, for instance, a button:
-          <ul>
-            <li>
-              <pre><code>button.addEventListener('click', () => {
-  deck.fire('simple-overview.toggle'));
-}</code></pre>
-              <button onclick="deck.fire('simple-overview.toggle')">Toggle <strong>Overview Mode</strong></button>
-            </li>
-          </ul>
-        </li>
+          links and the fullscreen QR code</strong></li>
       </ul>
     </section>
   </article>
@@ -132,10 +40,8 @@
   <script src="../node_modules/bespoke/dist/bespoke.js"></script>
   <script src="../node_modules/bespoke-keys/dist/bespoke-keys.js"></script>
   <script src="../node_modules/bespoke-touch/dist/bespoke-touch.js"></script>
-  <script src="../node_modules/bespoke-classes/dist/bespoke-classes.js"></script>
-  <script src="../node_modules/bespoke-bullets/dist/bespoke-bullets.js"></script>
   <script src="../node_modules/bespoke-theme-cube/dist/bespoke-theme-cube.js"></script>
-  <script src="../dist/bespoke-qrcode.js"></script>
+  <script src="../dist/bespoke-qrcode.min.js"></script>
   <script src="demo.js"></script>
 </body>
 </html>

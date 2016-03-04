@@ -6,16 +6,5 @@ pre {
 }
 pre, code {
   width: 90%;
-}
-.jumbo {
-  border: 1px solid goldenrod;
-  padding: 0.25em;
-  border-radius: 0.15em;
-  color: goldenrod;
-  background: rgba(255,255,255,0.3);
-  animation: sizing 500ms ease-out 0ms infinite alternate-reverse;
-}
-@keyframes sizing {
-  from { transform: none; }
-  to { transform: scale(1.1); }
+  text-align: left;
 }
